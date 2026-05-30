@@ -1,0 +1,167 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+/* Header Styles */
+.main-header {
+    background-color: #333545;
+    padding: 15px 0;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.search-container {
+    flex-grow: 1;
+    margin: 0 30px;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    font-size: 14px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.location-select {
+    background: transparent;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.location-select option {
+    color: #000;
+}
+
+.sign-in-btn {
+    background-color: #f84464;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Navigation Styles */
+.sub-nav {
+    background-color: #222539;
+    padding: 10px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-links-left a,
+.nav-links-right a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 20px;
+    transition: color 0.3s;
+}
+
+.nav-links-left a:hover,
+.nav-links-right a:hover {
+    color: #fff;
+}
+
+.nav-links-right a:last-child {
+    margin-right: 0;
+}
+
+/* Main Content Styles */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.banner-section {
+    margin-bottom: 30px;
+}
+
+.banner-section img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+}
+
+.content-section {
+    margin-bottom: 40px;
+}
+
+.content-section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Horizontal Scroll Container (Flexbox) */
+.horizontal-scroll-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* Allows horizontal scrolling if items overflow */
+    padding-bottom: 10px; /* Space for scrollbar */
+}
+
+/* Hide scrollbar for a cleaner look (optional) */
+.horizontal-scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+.horizontal-scroll-container::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.card {
+    flex: 0 0 auto; /* Prevents cards from shrinking */
+    width: 220px;
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+}

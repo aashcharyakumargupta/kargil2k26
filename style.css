@@ -1,0 +1,341 @@
+/* ==========================================================================
+   1. RESET & VARIABLE INITIALIZATION
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-main: #0d1117;       /* Deep dark space background */
+    --bg-card: #161b22;       /* Sleek elevated container background */
+    --accent-glow: #00ffcc;   /* Cyberpunk neon teal cyan */
+    --accent-dim: #00b399;    /* Muted accent for borders/hover states */
+    --text-primary: #f0f6fc;  /* Crisp, highly readable off-white */
+    --text-muted: #8b949e;    /* Subdued gray for body copy and placeholders */
+    --border-color: #30363d;  /* Clean, non-distracting borders */
+    --font-mono: 'Roboto Mono', monospace;
+}
+
+/* ==========================================================================
+   2. GLOBAL BODY & LAYOUT STYLES
+   ========================================================================== */
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    line-height: 1.6;
+    padding: 2rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Smooth layout separations using semantic sections */
+header, section {
+    background-color: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Standardizing headings across sections */
+h1, h2, h3 {
+    color: var(--text-primary);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    border-bottom: 2px solid var(--accent-glow);
+    padding-bottom: 0.3rem;
+}
+
+p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+a {
+    color: var(--accent-glow);
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+    color: #fff;
+    text-shadow: 0 0 8px var(--accent-glow);
+}
+
+/* ==========================================================================
+   3. NAVIGATION & HEADER
+   ========================================================================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 2.5rem;
+}
+
+nav {
+    font-size: 0.9rem;
+    color: var(--border-color);
+}
+
+nav a {
+    margin: 0 0.5rem;
+    font-weight: 500;
+}
+
+nav a:first-child {
+    margin-left: 0;
+}
+
+.material-symbols-outlined {
+    color: var(--accent-glow);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.material-symbols-outlined:hover {
+    transform: scale(1.1);
+}
+
+/* ==========================================================================
+   4. HERO / PROFILE SECTION
+   ========================================================================== */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.2rem;
+    background: linear-gradient(45deg, #fff, var(--accent-glow));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero img {
+    border-radius: 50%;
+    border: 3px solid var(--accent-glow);
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   5. SKILLS DISPLAY (TAG CLOUD DESIGN)
+   ========================================================================== */
+.skills ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.skills ul li {
+    background: rgba(0, 255, 204, 0.05);
+    color: var(--accent-glow);
+    border: 1px solid rgba(0, 255, 204, 0.2);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.skills ul li:hover {
+    background: var(--accent-glow);
+    color: var(--bg-main);
+    box-shadow: 0 0 12px rgba(0, 255, 204, 0.4);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   6. PROJECTS SECTION
+   ========================================================================== */
+article {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 1.25rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--accent-glow);
+    margin-bottom: 1.25rem;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+article:last-of-type {
+    margin-bottom: 0;
+}
+
+article:hover {
+    transform: translateX(6px);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+article h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   7. EDUCATION DATA TABLE
+   ========================================================================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border: 1px solid var(--border-color);
+}
+
+th {
+    background-color: rgba(0, 255, 204, 0.05);
+    color: var(--accent-glow);
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.01);
+}
+
+tr:hover td {
+    color: #fff;
+    background-color: rgba(0, 255, 204, 0.02);
+}
+
+/* ==========================================================================
+   8. MODERN FORM INTERFACES
+   ========================================================================== */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+
+/* Unified layout structure handling instead of old <br> elements */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 1.5rem; 
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent-glow);
+    box-shadow: 0 0 8px rgba(0, 255, 204, 0.2);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+input[type="file"] {
+    margin-bottom: 1.5rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* Custom styling for custom browser file-upload triggers */
+input[type="file"]::-webkit-file-upload-button {
+    background: var(--border-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    cursor: pointer;
+    margin-right: 1rem;
+    transition: background 0.2s;
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Action Button */
+button {
+    background: transparent;
+    color: var(--accent-glow);
+    border: 2px solid var(--accent-glow);
+    padding: 0.75rem 2rem;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0.5rem;
+}
+
+button:hover {
+    background: var(--accent-glow);
+    color: var(--bg-main);
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
+}
+
+/* ==========================================================================
+   9. RESPONSIVE DESIGN ADJUSTMENTS
+   ========================================================================== */
+@media (max-width: 650px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .hero img {
+        order: -1; /* Pushes profile image directly to top on mobile viewports */
+        margin: 0 auto;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    table {
+        display: block;
+        overflow-x: auto; /* Adds natural responsive horizontal scrolling for small screens */
+    }
+}
