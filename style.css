@@ -1,6 +1,3 @@
-/* ==========================================================================
-   1. RESET & VARIABLE INITIALIZATION
-   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -8,19 +5,16 @@
 }
 
 :root {
-    --bg-main: #0d1117;       /* Deep dark space background */
-    --bg-card: #161b22;       /* Sleek elevated container background */
-    --accent-glow: #00ffcc;   /* Cyberpunk neon teal cyan */
-    --accent-dim: #00b399;    /* Muted accent for borders/hover states */
-    --text-primary: #f0f6fc;  /* Crisp, highly readable off-white */
-    --text-muted: #8b949e;    /* Subdued gray for body copy and placeholders */
-    --border-color: #30363d;  /* Clean, non-distracting borders */
+    --bg-main: #0d1117;       
+    --bg-card: #161b22;       
+    --accent-glow: #00ffcc;   
+    --accent-dim: #00b399;    
+    --text-primary: #f0f6fc;
+    --text-muted: #8b949e;    
+    --border-color: #30363d;
     --font-mono: 'Roboto Mono', monospace;
 }
 
-/* ==========================================================================
-   2. GLOBAL BODY & LAYOUT STYLES
-   ========================================================================== */
 body {
     background-color: var(--bg-main);
     color: var(--text-primary);
@@ -31,7 +25,6 @@ body {
     margin: 0 auto;
 }
 
-/* Smooth layout separations using semantic sections */
 header, section {
     background-color: var(--bg-card);
     padding: 2.5rem;
@@ -43,7 +36,6 @@ header, section {
     overflow: hidden;
 }
 
-/* Standardizing headings across sections */
 h1, h2, h3 {
     color: var(--text-primary);
     font-weight: 700;
@@ -79,9 +71,6 @@ a:hover {
     text-shadow: 0 0 8px var(--accent-glow);
 }
 
-/* ==========================================================================
-   3. NAVIGATION & HEADER
-   ========================================================================== */
 header {
     display: flex;
     justify-content: space-between;
@@ -113,9 +102,6 @@ nav a:first-child {
     transform: scale(1.1);
 }
 
-/* ==========================================================================
-   4. HERO / PROFILE SECTION
-   ========================================================================== */
 .hero {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -128,6 +114,7 @@ nav a:first-child {
     margin-bottom: 1.2rem;
     background: linear-gradient(45deg, #fff, var(--accent-glow));
     -webkit-background-clip: text;
+    background-clip: text; /* Added standard property */
     -webkit-text-fill-color: transparent;
 }
 
@@ -138,9 +125,6 @@ nav a:first-child {
     object-fit: cover;
 }
 
-/* ==========================================================================
-   5. SKILLS DISPLAY (TAG CLOUD DESIGN)
-   ========================================================================== */
 .skills ul {
     list-style: none;
     display: flex;
@@ -166,9 +150,6 @@ nav a:first-child {
     transform: translateY(-2px);
 }
 
-/* ==========================================================================
-   6. PROJECTS SECTION
-   ========================================================================== */
 article {
     background: rgba(255, 255, 255, 0.02);
     padding: 1.25rem;
@@ -192,9 +173,6 @@ article h3 {
     margin-bottom: 0.5rem;
 }
 
-/* ==========================================================================
-   7. EDUCATION DATA TABLE
-   ========================================================================== */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -224,9 +202,6 @@ tr:hover td {
     background-color: rgba(0, 255, 204, 0.02);
 }
 
-/* ==========================================================================
-   8. MODERN FORM INTERFACES
-   ========================================================================== */
 form {
     display: flex;
     flex-direction: column;
@@ -239,7 +214,6 @@ label {
     font-weight: 600;
 }
 
-/* Unified layout structure handling instead of old <br> elements */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -274,7 +248,6 @@ input[type="file"] {
     font-size: 0.85rem;
 }
 
-/* Custom styling for custom browser file-upload triggers */
 input[type="file"]::-webkit-file-upload-button {
     background: var(--border-color);
     border: none;
@@ -315,9 +288,6 @@ button:hover {
     box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
 }
 
-/* ==========================================================================
-   9. RESPONSIVE DESIGN ADJUSTMENTS
-   ========================================================================== */
 @media (max-width: 650px) {
     .hero {
         grid-template-columns: 1fr;
@@ -325,7 +295,7 @@ button:hover {
     }
     
     .hero img {
-        order: -1; /* Pushes profile image directly to top on mobile viewports */
+        order: -1; 
         margin: 0 auto;
     }
 
@@ -336,6 +306,6 @@ button:hover {
     
     table {
         display: block;
-        overflow-x: auto; /* Adds natural responsive horizontal scrolling for small screens */
+        overflow-x: auto; 
     }
 }
