@@ -28,7 +28,7 @@ let btn=document.querySelector("#btn")
 btn.addEventListener("click",()=>{
     let taskdata=task.value
 
-    if(taskdata==""){
+    if(taskdata === ""){
         alert("please enter your task before adding")
         return;
     }
@@ -56,3 +56,30 @@ btn.addEventListener("click",()=>{
         compbtn.style.backgroundColor="LightGreen"
     })
 })
+
+let searchInput = document.querySelector("#searchinput")
+let sbtn=document.querySelector("#sbtn")
+sbtn.addEventListener("click", () => {
+    let searchTask = searchInput.value.trim().toLowerCase()
+
+    if (searchTask === "") {
+        alert("Please enter a task to search");
+        return;
+    }
+
+    let tasks = document.querySelectorAll("#list li")
+    let found = false
+
+    tasks.forEach((task) => {
+        let taskText = task.firstChild.textContent.trim().toLowerCase()
+        if (taskText === searchTask) {
+            found = true;
+        }
+    });
+
+    if (found) {
+        alert("Task exists")
+    } else {
+        alert("Task not found")
+    }
+});
